@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding:0;}
+		li{list-style:none;}
+		#carousel{
+			margin:0 auto;border:1px solid;			
+		}
+		.leftBtn,.rightBtn{
+			position:absolute;top:50%;margin-top:-20px;
+			width:30px;height:40px;cursor:pointer;
+		}
+		.leftBtn{
+			background:blue;left:5px;
+		}
+		.rightBtn{
+			background:red;right:5px;
+		}
+		.circles{
+			position: absolute;
+			bottom:30px;
+			left:100px;
+		}
+		.circles li{
+			float:left;
+			width:20px;
+			height:20px;
+			background:orange;
+			margin-right:10px;
+			border-radius: 50%;
+			cursor:pointer;
+		}
+		.circles li.cur{
+			background:red;
+		}
+		#lunbo{
+			border:3px solid;
+			margin:0 auto;
+		}
+		#lunbo .circles li.cur{
+			background:blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="carousel"></div>
+	<div id="lunbo"></div>
+</body>
+<script src="js/Carousel-JS.js"></script>
+<script>
+	//console.log(Carousel);
+	window.onload = function (){
+		/*初始化轮播图组件*/
+		new Carousel({
+			'id':'carousel',
+			'images':[
+				'image/1.jpg',
+				'image/2.jpg',
+				'image/3.jpg',
+				'image/4.jpg', 
+				'image/5.jpg'
+			],
+			'width':500,
+			'height':400,
+			'interval':5000,
+			'ev':'mouseenter',
+			'autoPlay':true
+		});
+
+		new Carousel({
+			'id':'lunbo',
+			'images':[
+				'image/1.jpg',
+				'image/2.jpg',
+				'image/3.jpg',
+				'image/4.jpg', 
+				'image/5.jpg'
+			],
+			'width':600,
+			'height':300,
+			'interval':3000,
+			'ev':'click',
+			'autoPlay':true
+		});
+	}
+
+</script>
+</html>
